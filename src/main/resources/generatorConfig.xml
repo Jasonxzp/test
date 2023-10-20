@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1" targetRuntime="MyBatis3">
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/my_test" driverClass="com.mysql.cj.jdbc.Driver" password="159357" userId="root" />
+    
+    <javaModelGenerator targetPackage="com.pojo" targetProject="Mytest">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    
+    <sqlMapGenerator targetPackage="mapper" targetProject="Mytest/src/main/resources">
+      <property name="enableSubPackages" value="false" />
+    </sqlMapGenerator>
+    
+    <javaClientGenerator targetPackage="com.mapper" targetProject="Mytest" type="XMLMAPPER">
+      <property name="enableSubPackages" value="false" />
+    </javaClientGenerator>
+    
+    <table tableName="person" enableCountByExample="true"
+      enableUpdateByExample="true" enableDeleteByExample="true"
+      enableSelectByExample="true" selectByExampleQueryId="true">
+      <generatedKey column="id" sqlStatement="Mysql" identity="true" />
+    </table>
+  </context>
+</generatorConfiguration>
